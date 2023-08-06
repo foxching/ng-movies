@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
+  ngOnInit():void{
+    console.log('ngOnInit')
+  }
 
+  ngOnChanges(){
+    console.log('ngOnChanges')
+  }
 }
