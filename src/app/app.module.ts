@@ -13,6 +13,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { DetailsMoviesComponent } from './components/details-movies/details-movies.component';
 import { DetailsReviewsComponent } from './components/details-reviews/details-reviews.component';
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,17 @@ import { DetailsActorsComponent } from './components/details-actors/details-acto
     ModalComponent,
     DetailsMoviesComponent,
     DetailsReviewsComponent,
-    DetailsActorsComponent
+    DetailsActorsComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'home', component: HomeComponent },
+      { path: 'details', component: DetailsComponent },
+    ]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
