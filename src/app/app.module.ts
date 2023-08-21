@@ -13,7 +13,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { DetailsMoviesComponent } from './components/details-movies/details-movies.component';
 import { DetailsReviewsComponent } from './components/details-reviews/details-reviews.component';
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
-import { RouterModule } from '@angular/router';
+import { AppRoutes } from './modules/app.routes';
 
 @NgModule({
   declarations: [
@@ -32,11 +32,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      { path: 'home', component: HomeComponent },
-      { path: 'details', component: DetailsComponent },
-    ]),
+    AppRoutes
   ],
   providers: [],
   bootstrap: [AppComponent],
