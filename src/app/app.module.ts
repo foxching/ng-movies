@@ -14,6 +14,7 @@ import { DetailsMoviesComponent } from './components/details-movies/details-movi
 import { DetailsReviewsComponent } from './components/details-reviews/details-reviews.component';
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
 import { AppRoutes } from './modules/app.routes';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AppRoutes } from './modules/app.routes';
   ],
   imports: [
     BrowserModule,
-    AppRoutes
+    AppRoutes,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

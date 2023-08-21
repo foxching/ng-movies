@@ -13,10 +13,10 @@
             <a class="nav-link"> <i class="bi bi-chat"></i> Feedback</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit" routerLink="search">Search</button>
-        </form>
+        <div class="d-flex" role="search">
+          <input [(ngModel)]="searchMovieTitle" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" [routerLink]="['/search/'+searchMovieTitle]">Search</button>
+        </div>
       </div>
     </div>
   </nav>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
+  movieId = ""
+
+  constructor(private _activatedRoute: ActivatedRoute) { 
+    this._activatedRoute.params.subscribe((p) => {
+      this.movieId = p["id"];
+    })
+  }
+  
   ngOnInit():void{
     console.log('ngOnInit')
   }
