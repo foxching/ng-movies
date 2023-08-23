@@ -6,6 +6,7 @@ import { SearchComponent } from '../components/search/search.component';
 import { DetailsActorsComponent } from '../components/details-actors/details-actors.component';
 import { DetailsReviewsComponent } from '../components/details-reviews/details-reviews.component';
 import { DetailsMoviesComponent } from '../components/details-movies/details-movies.component';
+import { NotFoundComponent } from '../components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'details/actors/:id', component: DetailsActorsComponent },
   { path: 'details/reviews/:id', component: DetailsReviewsComponent },
   { path: 'details/movies/:id', component: DetailsMoviesComponent },
-  { path: 'search/:movieTitle', component: SearchComponent }
+  { path: 'search/:movieTitle', component: SearchComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

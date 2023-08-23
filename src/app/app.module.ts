@@ -15,6 +15,7 @@ import { DetailsReviewsComponent } from './components/details-reviews/details-re
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
 import { AppRoutes } from './modules/app.routes';
 import { FormsModule } from '@angular/forms';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     DetailsMoviesComponent,
     DetailsReviewsComponent,
     DetailsActorsComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
