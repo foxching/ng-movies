@@ -6,5 +6,48 @@ import { Component } from '@angular/core';
   styleUrls: ['./details-movies.component.css']
 })
 export class DetailsMoviesComponent {
-
+  similarMovies : any[] = [
+    {
+      id:1,
+      imageUrl:'../../../assets/images/card-image.png',
+      title:'Movie #1 Title',
+      rate:9.5
+    },
+    {
+      id:1,
+      imageUrl:'../../../assets/images/card-image.png',
+      title:'Movie #1 Title',
+      rate:9.5
+    },
+    {
+      id:1,
+      imageUrl:'../../../assets/images/card-image.png',
+      title:'Movie #1 Title',
+      rate:9.5
+    },
+    {
+      id:1,
+      imageUrl:'../../../assets/images/card-image.png',
+      title:'Movie #1 Title',
+      rate:9.5
+    },
+    {
+      id:1,
+      imageUrl:'../../../assets/images/card-image.png',
+      title:'Movie #1 Title',
+      rate:9.5
+    },
+    {
+      id:1,
+      imageUrl:'../../../assets/images/card-image.png',
+      title:'Movie #1 Title',
+      rate:9.5
+    },
+    {
+      id:1,
+      imageUrl:'../../../assets/images/card-image.png',
+      title:'Movie #1 Title',
+      rate:9.5
+    }
+  ]
 }

@@ -1,72 +1,13 @@
-<figure class="figure">
+<figure class="figure" *ngFor="let movie of similarMovies">
   <img
-    src="../../../assets/images/card-image.png"
+    [src]="movie.imageUrl"
     style="max-width: 150px"
     class="figure-img img-fluid rounded img-thumbnail"
     alt="..."
   />
-  <figcaption class="figure-caption">Movie #1 Title</figcaption>
+  <figcaption class="figure-caption">{{movie.title}}</figcaption>
   <figcaption class="figure-caption">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
+    <i class="bi bi-star"></i> <b>{{movie.rate}}/10</b>
   </figcaption>
 </figure>
-<figure class="figure">
-  <img
-    src="../../../assets/images/card-image.png"
-    style="max-width: 150px"
-    class="figure-img img-fluid rounded img-thumbnail"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Movie #1 Title</figcaption>
-  <figcaption class="figure-caption">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
-  </figcaption>
-</figure>
-<figure class="figure">
-  <img
-    src="../../../assets/images/card-image.png"
-    style="max-width: 150px"
-    class="figure-img img-fluid rounded img-thumbnail"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Movie #1 Title</figcaption>
-  <figcaption class="figure-caption">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
-  </figcaption>
-</figure>
-<figure class="figure">
-  <img
-    src="../../../assets/images/card-image.png"
-    style="max-width: 150px"
-    class="figure-img img-fluid rounded img-thumbnail"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Movie #1 Title</figcaption>
-  <figcaption class="figure-caption">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
-  </figcaption>
-</figure>
-<figure class="figure">
-  <img
-    src="../../../assets/images/card-image.png"
-    style="max-width: 150px"
-    class="figure-img img-fluid rounded img-thumbnail"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Movie #1 Title</figcaption>
-  <figcaption class="figure-caption">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
-  </figcaption>
-</figure>
-<figure class="figure">
-  <img
-    src="../../../assets/images/card-image.png"
-    style="max-width: 150px"
-    class="figure-img img-fluid rounded img-thumbnail"
-    alt="..."
-  />
-  <figcaption class="figure-caption">Movie #1 Title</figcaption>
-  <figcaption class="figure-caption">
-    <i class="bi bi-star"></i> <b>9.1/10</b>
-  </figcaption>
-</figure>
+
