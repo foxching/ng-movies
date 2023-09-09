@@ -60,6 +60,6 @@ export class HomeComponent {
     },
   ];
 
-  isVisible = true;
+  integerValue = 10;
   
 }
