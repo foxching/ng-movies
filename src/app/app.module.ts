@@ -17,6 +17,7 @@ import { AppRoutes } from './modules/app.routes';
 import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderDirective } from './directives/header.directive';
+import { MyIfDirective } from './directives/my-if.directive';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { HeaderDirective } from './directives/header.directive';
     DetailsActorsComponent,
     NotFoundComponent,
     HeaderDirective,
+    MyIfDirective,
   ],
   imports: [
     BrowserModule,

@@ -60,6 +60,6 @@ export class HomeComponent {
     },
   ];
 
-  integerValue = 10;
+  isActive= true;
   
 }
