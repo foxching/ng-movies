@@ -60,18 +60,6 @@ export class HomeComponent {
     },
   ];
 
-  currentStyles : Record<string, string> = {
-
-  }
-  isCentered = false;
-  isSuccess = false;
-  isLarge = true;
-
-  constructor() {
-    this.currentStyles = {
-      'text-align':this.isCentered ? 'center' : '',
-      'color':this.isSuccess ? 'green' : 'red',
-      'font-size':this.isLarge ? 'large': 'small'
-    }
-  }
+  isVisible = true;
+  
 }
