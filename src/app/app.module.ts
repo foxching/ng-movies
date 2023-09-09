@@ -16,6 +16,7 @@ import { DetailsActorsComponent } from './components/details-actors/details-acto
 import { AppRoutes } from './modules/app.routes';
 import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HeaderDirective } from './directives/header.directive';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     DetailsReviewsComponent,
     DetailsActorsComponent,
     NotFoundComponent,
+    HeaderDirective,
   ],
   imports: [
     BrowserModule,
