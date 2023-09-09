@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -14,7 +15,7 @@ import { DetailsMoviesComponent } from './components/details-movies/details-movi
 import { DetailsReviewsComponent } from './components/details-reviews/details-reviews.component';
 import { DetailsActorsComponent } from './components/details-actors/details-actors.component';
 import { AppRoutes } from './modules/app.routes';
-import { FormsModule } from '@angular/forms';
+
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderDirective } from './directives/header.directive';
 import { MyIfDirective } from './directives/my-if.directive';
@@ -37,11 +38,7 @@ import { MyIfDirective } from './directives/my-if.directive';
     HeaderDirective,
     MyIfDirective,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutes,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutes, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
