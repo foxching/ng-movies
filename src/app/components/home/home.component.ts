@@ -59,4 +59,9 @@ export class HomeComponent {
       rank: 4,
     },
   ];
+
+  cssClass = "text-primary";
+  successColor = "text-success";
+  errorColor = "text-danger";
+  isSuccess = false;
 }
