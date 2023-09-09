@@ -60,8 +60,18 @@ export class HomeComponent {
     },
   ];
 
-  cssClass = "text-primary";
-  successColor = "text-success";
-  errorColor = "text-danger";
+  currentStyles : Record<string, string> = {
+
+  }
+  isCentered = false;
   isSuccess = false;
+  isLarge = true;
+
+  constructor() {
+    this.currentStyles = {
+      'text-align':this.isCentered ? 'center' : '',
+      'color':this.isSuccess ? 'green' : 'red',
+      'font-size':this.isLarge ? 'large': 'small'
+    }
+  }
 }
