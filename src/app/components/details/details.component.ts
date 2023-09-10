@@ -1,29 +1,37 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+  styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent {
-  movieId = "";
+  movieId = '';
 
-  stars = ["Star 1", "Star 2", "Start 3"];
-  actors = ["Actor 1", "Actor 2", "Actor 3"];
-  directors = ["Director 1", "Director 2", "Director 3"];
+  stars = [];
+  genres = [];
+  directors = [];
 
-  constructor(private _activatedRoute: ActivatedRoute) { 
+  constructor(
+    private _activatedRoute: ActivatedRoute,
+    private httpClient: HttpClient
+  ) {
     this._activatedRoute.params.subscribe((p) => {
-      this.movieId = p["id"];
-    })
-  }
-  
-  ngOnInit():void{
-    console.log('ngOnInit')
+      this.movieId = p['id'];
+    });
   }
 
-  ngOnChanges(){
-    console.log('ngOnChanges')
+  ngOnInit(): void {
+    this.loadMovieSummary();
+  }
+
+  loadMovieSummary() {
+    this.httpClient.get<any>('assets/data/movieSummary.json').subscribe((data:any) => {
+      this.stars = data.stars;
+      this.genres = data.genres;
+      this.directors = data.directors;
+    })
   }
 }

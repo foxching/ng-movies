@@ -18,15 +18,19 @@
         <div class="card">
           <div class="card-header">Stars</div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item" *ngFor="let star of stars">{{star}}</li>
+            <li class="list-group-item" *ngFor="let star of stars">
+              {{ star }}
+            </li>
           </ul>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card">
-          <div class="card-header">Actors</div>
+          <div class="card-header">Genres</div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item" *ngFor="let actor of actors">{{actor}}</li>
+            <li class="list-group-item" *ngFor="let genre of genres">
+              {{ genre }}
+            </li>
           </ul>
         </div>
       </div>
@@ -34,7 +38,9 @@
         <div class="card">
           <div class="card-header">Directors</div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item" *ngFor="let director of directors">{{director}}</li>
+            <li class="list-group-item" *ngFor="let director of directors">
+              {{ director }}
+            </li>
           </ul>
         </div>
       </div>
@@ -51,7 +57,7 @@
   <div class="text-center">
     <p>
       <a class="btn btn-warning" routerLink="/details/actors/1">
-          View all actors
+        View all actors
       </a>
     </p>
   </div>
@@ -66,7 +72,7 @@
   <div class="text-center mt-2">
     <p>
       <a class="btn btn-warning" routerLink="/details/reviews/1">
-          View all reviews
+        View all reviews
       </a>
     </p>
   </div>
@@ -80,9 +86,7 @@
   </div>
   <div class="text-center mt-2">
     <p>
-      <a class="btn btn-warning" routerLink="/details/movies/1">
-          View more
-      </a>
+      <a class="btn btn-warning" routerLink="/details/movies/1"> View more </a>
     </p>
   </div>
 </div>

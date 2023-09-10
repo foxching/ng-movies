@@ -13,25 +13,24 @@ export class HomeComponent {
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.getFanFavoritesMovies();
     this.getTopMovies();
   }
 
-  getFanFavoritesMovies(){
-    this.http.get<any[]>('assets/data/fanFavoriteMovies.json')
-    .subscribe((data) => {
-      this.fanFavories = data;
-    })
+  getFanFavoritesMovies() {
+    this.http
+      .get<any[]>('assets/data/fanFavoriteMovies.json')
+      .subscribe((data : any[]) => {
+        this.fanFavories = data;
+      });
   }
 
-  getTopMovies(){
-    this.http.get<any[]>('assets/data/topMovies.json')
-    .subscribe((data) => {
-      this.topMovies = data;
-    })
+  getTopMovies() {
+    this.http
+      .get<any[]>('assets/data/topMovies.json')
+      .subscribe((data: any[]) => {
+        this.topMovies = data;
+      });
   }
-
-
- 
 }
