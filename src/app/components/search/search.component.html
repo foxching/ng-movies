@@ -11,16 +11,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
+      
+      <tr *ngFor="let search of searchResults">
+        <th scope="row">{{search.id}}</th>
         <td>
-          <img src="../../../assets/images/card-image.png" width="100" alt="" />
+          <img [src]="search.imageUrl" width="100" alt="" />
         </td>
-        <td>Movie # title</td>
+        <td>{{search.title}}</td>
         <td>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
-            hi!
+            {{search.description}}
           </p>
         </td>
         <td>
@@ -28,40 +28,7 @@
           <a class="btn btn-primary" routerLink="/details/1"><i class="bi bi-eye"></i>Details</a>
         </td>
       </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>
-          <img src="../../../assets/images/card-image.png" width="100" alt="" />
-        </td>
-        <td>Movie # title</td>
-        <td>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
-            hi!
-          </p>
-        </td>
-        <td>
-          <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-film"></i>Trailer</a>
-          <a class="btn btn-primary" routerLink="/details/2"><i class="bi bi-eye"></i>Details</a>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>
-          <img src="../../../assets/images/card-image.png" width="100" alt="" />
-        </td>
-        <td>Movie # title</td>
-        <td>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
-            hi!
-          </p>
-        </td>
-        <td>
-          <a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-film"></i>Trailer</a>
-          <a class="btn btn-primary" routerLink="/details/3"><i class="bi bi-eye"></i>Details</a>
-        </td>
-      </tr>
+     
     </tbody>
   </table>
 </div>
