@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent {
 
   fanFavories: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private movieService:MoviesService) {}
 
   ngOnInit(): void {
     this.getFanFavoritesMovies();
@@ -19,16 +20,14 @@ export class HomeComponent {
   }
 
   getFanFavoritesMovies() {
-    this.http
-      .get<any[]>('assets/data/fanFavoriteMovies.json')
+    this.movieService.getFanFavoritesMovies()
       .subscribe((data : any[]) => {
         this.fanFavories = data;
       });
   }
 
   getTopMovies() {
-    this.http
-      .get<any[]>('assets/data/topMovies.json')
+    this.movieService.getTopMovies()
       .subscribe((data: any[]) => {
         this.topMovies = data;
       });

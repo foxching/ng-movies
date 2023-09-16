@@ -19,6 +19,7 @@ import { AppRoutes } from './modules/app.routes';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderDirective } from './directives/header.directive';
 import { MyIfDirective } from './directives/my-if.directive';
+import { MoviesService } from './services/movies.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { MyIfDirective } from './directives/my-if.directive';
     MyIfDirective,
   ],
   imports: [BrowserModule, AppRoutes, FormsModule, HttpClientModule],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
