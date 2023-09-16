@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-details-reviews',
@@ -9,19 +9,15 @@ import { Component } from '@angular/core';
 export class DetailsReviewsComponent {
   movieRates: any[] = [];
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private movieService: MoviesService) {}
 
   ngOnInit(): void {
     this.loadMovieRates();
   }
 
-  loadMovieRates(){
-    this.httpClient
-    .get<any[]>('assets/data/movieRates.json')
-    .subscribe((data : any[]) => {
+  loadMovieRates() {
+    this.movieService.getMovieRates().subscribe((data: any[]) => {
       this.movieRates = data;
     });
   }
-
-
 }

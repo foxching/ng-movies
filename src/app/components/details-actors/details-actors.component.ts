@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-details-actors',
@@ -7,19 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./details-actors.component.css'],
 })
 export class DetailsActorsComponent {
-  actors : any[] = [];
+  actors: any[] = [];
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private movieService: MoviesService) {}
 
   ngOnInit(): void {
     this.loadMovieActors();
   }
 
   loadMovieActors() {
-    this.httpClient
-      .get<any[]>('assets/data/movieActors.json')
-      .subscribe((data : any[]) => {
-        this.actors = data;
-      });
+    this.movieService.getMovieActors().subscribe((data: any[]) => {
+      this.actors = data;
+    });
   }
 }

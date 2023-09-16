@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { catchError } from 'rxjs';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-search',
@@ -13,10 +12,10 @@ export class SearchComponent {
   searchResults: any[] = [];
 
   constructor(
-    private _activatedRoute: ActivatedRoute,
-    private httpClient: HttpClient
+    private activatedRoute: ActivatedRoute,
+    private movieService: MoviesService
   ) {
-    this._activatedRoute.params.subscribe((p) => {
+    this.activatedRoute.params.subscribe((p) => {
       this.movieTitle = p['movieTitle'];
     });
   }
@@ -33,7 +32,7 @@ export class SearchComponent {
   // }
 
   searchMovies() {
-    this.httpClient.get<any[]>('assets/data/movieSearch.json').subscribe({
+    this.movieService.getSearchedMovies().subscribe({
       next: (data:any[]) => {
         this.searchResults = data;
       },

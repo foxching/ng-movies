@@ -1,24 +1,22 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-details-movies',
   templateUrl: './details-movies.component.html',
-  styleUrls: ['./details-movies.component.css']
+  styleUrls: ['./details-movies.component.css'],
 })
 export class DetailsMoviesComponent {
-  similarMovies : any[] = []
+  similarMovies: any[] = [];
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private movieService: MoviesService) {}
 
   ngOnInit(): void {
     this.loadSimilarMovies();
   }
 
-  loadSimilarMovies(){
-    this.httpClient
-    .get<any[]>('assets/data/similarMovies.json')
-    .subscribe((data : any[]) => {
+  loadSimilarMovies() {
+    this.movieService.getSimilarMovies().subscribe((data: any[]) => {
       this.similarMovies = data;
     });
   }
