@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -23,11 +24,27 @@ export class SearchComponent {
     this.searchMovies();
   }
 
+  // searchMovies() {
+  //   this.httpClient
+  //     .get<any[]>('assets/data/movieSearch.json')
+  //     .subscribe((data: any[]) => {
+  //       this.searchResults = data;
+  //     });
+  // }
+
   searchMovies() {
-    this.httpClient
-      .get<any[]>('assets/data/movieSearch.json')
-      .subscribe((data: any[]) => {
+    this.httpClient.get<any[]>('assets/data/movieSearch.json').subscribe({
+      next: (data:any[]) => {
         this.searchResults = data;
-      });
+      },
+      error: (error) => {
+        console.log('Error loading data', error);
+      },
+      complete: () => {
+        console.log('Request completed successfully');
+      },
+    });
   }
+
+
 }
