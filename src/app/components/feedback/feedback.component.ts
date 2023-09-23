@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Feedback } from 'src/app/model/Feedback';
 
 @Component({
   selector: 'app-feedback',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent {
+    feedback : Feedback = new Feedback('', '', 3,'', '')
 
+    
+  ngOnInit(): void {
+    console.log('app initialized')
+  }
+
+    submitFeedback(){
+
+    }
 }
