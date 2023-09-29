@@ -15,6 +15,6 @@ export class FeedbackComponent {
   }
 
     submitFeedback(){
-
+      console.log('feedback', this.feedback)
     }
 }
