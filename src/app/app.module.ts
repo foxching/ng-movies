@@ -1,6 +1,6 @@
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -23,7 +23,6 @@ import { MoviesService } from './services/movies.service';
 import { GlobalErrorHander } from './services/global-error-handler.service';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,13 +39,18 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     DetailsActorsComponent,
     NotFoundComponent,
     FeedbackComponent,
-    
+
     //Directive
     HeaderDirective,
     MyIfDirective,
-    
   ],
-  imports: [BrowserModule, AppRoutes, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutes,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [
     MoviesService,
     { provide: ErrorHandler, useClass: GlobalErrorHander },
