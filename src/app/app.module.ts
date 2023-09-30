@@ -22,6 +22,7 @@ import { MyIfDirective } from './directives/my-if.directive';
 import { MoviesService } from './services/movies.service';
 import { GlobalErrorHander } from './services/global-error-handler.service';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { AuthModule } from '@auth0/auth0-angular';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,13 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AuthModule.forRoot({
+      domain:'dev-w6zp8h3n4h4hqsdm.us.auth0.com',
+      clientId:'FcndTQPigv5EIDOq3BiiHq3vDvIDl90b',
+      authorizationParams:{
+        redirect_uri:window.location.origin
+      }
+    })
   ],
   providers: [
     MoviesService,
