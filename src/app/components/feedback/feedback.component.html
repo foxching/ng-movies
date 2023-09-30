@@ -25,6 +25,11 @@
             <div *ngIf="feedbackForm.get('emailAddress')?.hasError('email')">
               Invalid email address
             </div>
+            <div
+              *ngIf="feedbackForm.get('emailAddress')?.hasError('invalidDomain')"
+            >
+              Invalid Domain
+            </div>
           </div>
         </div>
         <div class="mb-3">
@@ -102,6 +107,9 @@
           >
             <div *ngIf="feedbackForm.get('feedback')?.hasError('required')">
               Feedback is required
+            </div>
+            <div *ngIf="feedbackForm.get('feedback')?.hasError('invalidKeywords')">
+              Inappropriate keywords
             </div>
           </div>
         </div>
